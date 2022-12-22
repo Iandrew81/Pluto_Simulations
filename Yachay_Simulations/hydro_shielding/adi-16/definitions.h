@@ -5,9 +5,9 @@
 #define  COOLING                        NO
 #define  RECONSTRUCTION                 PARABOLIC
 #define  TIME_STEPPING                  RK3
-#define  NTRACER                        1
+#define  NTRACER                        2
 #define  PARTICLES                      NO
-#define  USER_DEF_PARAMETERS            1
+#define  USER_DEF_PARAMETERS            2
 
 /* -- physics dependent declarations -- */
 
@@ -21,8 +21,11 @@
 /* -- user-defined parameters (labels) -- */
 
 #define  RADIUS                         0
+#define  DELTA                          1
 
 /* [Beg] user-defined constants (do not change this line) */
-
+#define UNIT_DENSITY			(0.67*CONST_amu*0.01)
+#define UNIT_LENGTH			(50*CONST_pc)
+#define UNIT_VELOCITY			(1.e7)
 
 /* [End] user-defined constants (do not change this line) */
