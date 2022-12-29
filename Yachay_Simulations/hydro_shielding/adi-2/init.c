@@ -41,7 +41,7 @@ void Init (double *v, double x1, double x2, double x3)
  *
  *********************************************************************** */
 {
-double r, r1, r2, r3, r4, x0, y0, z0, delta; 
+double r, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r32, r33, r34, x0, y0, z0, delta; 
 // r  -> cloud radius
 // x0, y0, z0 -> coordinates of the centre
 
@@ -57,8 +57,58 @@ r = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - y0)*(x2 - y0), + (x3 - z0)*(x3 - z0)
 
 r1 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-delta))*(x2 - (y0-delta)), + (x3 - z0)*(x3 - z0));
 r2 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+delta))*(x2 - (y0+delta)), + (x3 - z0)*(x3 - z0));
+
 r3 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-2*delta))*(x2 - (y0-2*delta)), + (x3 - z0)*(x3 - z0));
 r4 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+2*delta))*(x2 - (y0+2*delta)), + (x3 - z0)*(x3 - z0));
+
+r5 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-4*delta))*(x2 - (y0-4*delta)), + (x3 - z0)*(x3 - z0));
+r6 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+4*delta))*(x2 - (y0+4*delta)), + (x3 - z0)*(x3 - z0));
+r7 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-8*delta))*(x2 - (y0-8*delta)), + (x3 - z0)*(x3 - z0));
+r8 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+8*delta))*(x2 - (y0+8*delta)), + (x3 - z0)*(x3 - z0));
+
+r9= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-3*delta))*(x2 - (y0-3*delta)), + (x3 - z0)*(x3 - z0));
+r10 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+3*delta))*(x2 - (y0+3*delta)), + (x3 - z0)*(x3 - z0));
+
+r11= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-5*delta))*(x2 - (y0-5*delta)), + (x3 - z0)*(x3 - z0));
+r12 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+5*delta))*(x2 - (y0+5*delta)), + (x3 - z0)*(x3 - z0));
+
+r13= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-6*delta))*(x2 - (y0-6*delta)), + (x3 - z0)*(x3 - z0));
+r14 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+6*delta))*(x2 - (y0+6*delta)), + (x3 - z0)*(x3 - z0));
+
+r15= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-7*delta))*(x2 - (y0-7*delta)), + (x3 - z0)*(x3 - z0));
+r16 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+7*delta))*(x2 - (y0+7*delta)), + (x3 - z0)*(x3 - z0));
+
+r17= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-8*delta))*(x2 - (y0-8*delta)), + (x3 - z0)*(x3 - z0));
+r18 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+8*delta))*(x2 - (y0+8*delta)), + (x3 - z0)*(x3 - z0));
+
+r19= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-9*delta))*(x2 - (y0-9*delta)), + (x3 - z0)*(x3 - z0));
+r20 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+9*delta))*(x2 - (y0+9*delta)), + (x3 - z0)*(x3 - z0));
+
+r21= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-10*delta))*(x2 - (y0-10*delta)), + (x3 - z0)*(x3 - z0));
+r22 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+10*delta))*(x2 - (y0+10*delta)), + (x3 - z0)*(x3 - z0));
+
+r23= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-11*delta))*(x2 - (y0-11*delta)), + (x3 - z0)*(x3 - z0));
+r24 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+11*delta))*(x2 - (y0+11*delta)), + (x3 - z0)*(x3 - z0));
+
+r25= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-12*delta))*(x2 - (y0-12*delta)), + (x3 - z0)*(x3 - z0));
+r26 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+12*delta))*(x2 - (y0+12*delta)), + (x3 - z0)*(x3 - z0));
+
+r27= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-13*delta))*(x2 - (y0-13*delta)), + (x3 - z0)*(x3 - z0));
+r28 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+13*delta))*(x2 - (y0+13*delta)), + (x3 - z0)*(x3 - z0));
+
+r29= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-14*delta))*(x2 - (y0-14*delta)), + (x3 - z0)*(x3 - z0));
+r30 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+14*delta))*(x2 - (y0+14*delta)), + (x3 - z0)*(x3 - z0));
+
+r31= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-15*delta))*(x2 - (y0-15*delta)), + (x3 - z0)*(x3 - z0));
+r32 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+15*delta))*(x2 - (y0+15*delta)), + (x3 - z0)*(x3 - z0));
+
+r33= DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-16*delta))*(x2 - (y0-16*delta)), + (x3 - z0)*(x3 - z0));
+r34 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+16*delta))*(x2 - (y0+16*delta)), + (x3 - z0)*(x3 - z0));
+
+
+
+
+
 
 // Cloud parameters:
 if (sqrt(r) < g_inputParam[RADIUS]) {
@@ -69,7 +119,7 @@ if (sqrt(r) < g_inputParam[RADIUS]) {
   v[TRC] = 1.0;
   v[TRC+1] = 1.0;
 }
-else if ((sqrt(r1) < g_inputParam[RADIUS]) || (sqrt(r2) < g_inputParam[RADIUS]) || (sqrt(r3) < g_inputParam[RADIUS]) || (sqrt(r4) < g_inputParam[RADIUS]) ){
+else if ((sqrt(r1) < g_inputParam[RADIUS]) || (sqrt(r2) < g_inputParam[RADIUS]) || (sqrt(r3) < g_inputParam[RADIUS]) || (sqrt(r4) < g_inputParam[RADIUS]) || (sqrt(r5) < g_inputParam[RADIUS]) || (sqrt(r6) < g_inputParam[RADIUS]) || (sqrt(r7) < g_inputParam[RADIUS]) || (sqrt(r8) < g_inputParam[RADIUS])   || (sqrt(r9)< g_inputParam[RADIUS]) || (sqrt(r10) < g_inputParam[RADIUS]) || (sqrt(r11) < g_inputParam[RADIUS]) || (sqrt(r12) < g_inputParam[RADIUS]) || (sqrt(r13) < g_inputParam[RADIUS]) || (sqrt(r14) < g_inputParam[RADIUS]) || (sqrt(r15) < g_inputParam[RADIUS]) || (sqrt(r16) < g_inputParam[RADIUS]) || (sqrt(r16) < g_inputParam[RADIUS]) || (sqrt(r17) < g_inputParam[RADIUS]) || (sqrt(r18) < g_inputParam[RADIUS]) || (sqrt(r19) < g_inputParam[RADIUS]) || (sqrt(r20) < g_inputParam[RADIUS]) || (sqrt(r21) < g_inputParam[RADIUS]) || (sqrt(r22) < g_inputParam[RADIUS]) || (sqrt(r23) < g_inputParam[RADIUS])  || (sqrt(r24) < g_inputParam[RADIUS]) || (sqrt(r25) < g_inputParam[RADIUS]) || (sqrt(r26) < g_inputParam[RADIUS]) || (sqrt(r27) < g_inputParam[RADIUS]) || (sqrt(r28) < g_inputParam[RADIUS]) || (sqrt(r29) < g_inputParam[RADIUS]) || (sqrt(r30) < g_inputParam[RADIUS]) || (sqrt(r31) < g_inputParam[RADIUS]) || (sqrt(r32) < g_inputParam[RADIUS]) || (sqrt(r33) < g_inputParam[RADIUS]) || (sqrt(r34) < g_inputParam[RADIUS]) ){
   v[RHO] = 100.0;
   v[VX1] = 0.0;
   v[VX2] = 0.0;

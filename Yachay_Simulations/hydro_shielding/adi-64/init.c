@@ -41,7 +41,7 @@ void Init (double *v, double x1, double x2, double x3)
  *
  *********************************************************************** */
 {
-double r, r1, r2, r3, r4, x0, y0, z0, delta; 
+double r,  x0, y0, z0, delta; 
 // r  -> cloud radius
 // x0, y0, z0 -> coordinates of the centre
 
@@ -55,10 +55,6 @@ delta = g_inputParam[DELTA];
 // Cloud radius:
 r = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - y0)*(x2 - y0), + (x3 - z0)*(x3 - z0));
 
-r1 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-delta))*(x2 - (y0-delta)), + (x3 - z0)*(x3 - z0));
-r2 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+delta))*(x2 - (y0+delta)), + (x3 - z0)*(x3 - z0));
-r3 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0-2*delta))*(x2 - (y0-2*delta)), + (x3 - z0)*(x3 - z0));
-r4 = DIM_EXPAND((x1 - x0)*(x1 - x0), + (x2 - (y0+2*delta))*(x2 - (y0+2*delta)), + (x3 - z0)*(x3 - z0));
 
 // Cloud parameters:
 if (sqrt(r) < g_inputParam[RADIUS]) {
@@ -67,15 +63,6 @@ if (sqrt(r) < g_inputParam[RADIUS]) {
   v[VX2] = 0.0;
   v[VX3] = 0.0;
   v[TRC] = 1.0;
-  v[TRC+1] = 1.0;
-}
-else if ((sqrt(r1) < g_inputParam[RADIUS]) || (sqrt(r2) < g_inputParam[RADIUS]) || (sqrt(r3) < g_inputParam[RADIUS]) || (sqrt(r4) < g_inputParam[RADIUS]) ){
-  v[RHO] = 100.0;
-  v[VX1] = 0.0;
-  v[VX2] = 0.0;
-  v[VX3] = 0.0;
-  v[TRC] = 1.0;
-  v[TRC+1] = 0.0;
 }
 else{
 // Wind parameters:
@@ -84,7 +71,6 @@ else{
   v[VX2] = 5.0;
   v[VX3] = 0.0;
   v[TRC] = 0.0;
-  v[TRC+1] = 0.0;
 }
 
   #if HAVE_ENERGY
