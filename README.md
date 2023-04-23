@@ -1,4 +1,4 @@
-# PLUTO code (Yachay Tech version)
+# PLUTO simulation code
 
 - Based on the code written by A. Mignone.
 
